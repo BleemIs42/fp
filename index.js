@@ -10,18 +10,20 @@ let FP = {}
 FP.curry = fn => {
     const argsL = fn.length
 
-    const f = function() {
+    const f = function(args) {
         return function () {
-            arguments = [].concat(slice(arguments));
-            if (arguments.length >= argsL) return fn.apply(this, arguments);
-            return f(arguments);
+            arguments = args.concat(slice(arguments))
+            if (arguments.length >= argsL) 
+                return fn.apply(this, arguments)
+            return f(arguments)
         }
     }
-    return f()
+    return f([])
 }
 
 // const add = (a, b) => a + b
 // const curryAdd = FP.curry(add)
+// console.log(curryAdd(2)(3))
 // console.log(curryAdd(1, 2)) // 3
 
 FP.compose = function(){
