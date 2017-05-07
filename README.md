@@ -3,7 +3,7 @@ FP is a Functionl Program library for Javascript.
 
 # API    
     * curry
-        FP.curry(f(a, b))  =>  f(a)(b)
+        FP.curry(f(a, b))  =>  f(a)(b) / f(a, b)
     * compose 
         FP.compose(f, g)(x)  => f(g(x))
     * composeL
