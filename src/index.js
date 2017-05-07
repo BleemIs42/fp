@@ -3,9 +3,9 @@ const toFn = x => (typeof x === 'function') ? x : () => x
 let FP = {}
 FP.curry = fn => {
     const f = _args => (...args) => {
-        args = args.concat(_args)
+        args = [...args, ..._args]
         if (args.length >= fn.length)
-            return fn.apply(this, args)
+            return fn(...args)
         return f(args)
     }
     return f([])
