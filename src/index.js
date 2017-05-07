@@ -1,4 +1,4 @@
-const toFn= x => (typeof x === 'function') ? x : () => x
+const toFn = x => (typeof x === 'function') ? x : () => x
 
 let FP = {}
 FP.curry = fn => {
@@ -18,17 +18,17 @@ console.log(curryAdd(2, 4)) // 6
 
 FP.compose = (...fns) => (...args) => fns.map(x => toFn(x)).reverse().reduce((args, fn) => [fn(...args)], args)[0]
 // FP.compose = (...fns) => (...args) => {
-    // fns = fns.map(x => toFn(x))
-    // while (fns.length) {
-    //     args = [fns.pop().apply(this, args)]
-    // }
-    // return args[0]
+// fns = fns.map(x => toFn(x))
+// while (fns.length) {
+//     args = [fns.pop().apply(this, args)]
+// }
+// return args[0]
 // }
 
 const inc = n => n + 2
 const dob = n => n * 2
 const co = FP.compose(inc, dob)
-console.log(co(2))  // 6
+console.log(co(2)) // 6
 
 FP.composeL = (...args) => FP.compose(...args.reverse())
 
@@ -45,4 +45,4 @@ FP.pipe = (...args) => (...fns) => fns.map(x => toFn(x)).reduce((args, fn) => [f
 // }
 
 const pp = FP.pipe(1)(inc, dob)
-console.log(pp)     // 6
+console.log(pp) // 6
