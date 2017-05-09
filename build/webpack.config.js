@@ -9,9 +9,9 @@ export default {
     resolve: {
         extensions: ['.js']
     },
-    entry: resolve(__dirname, '../lib'),
+    entry: resolve(__dirname, '../src/lib'),
     output: {
-        path: resolve(__dirname, '../../dist'),
+        path: resolve(__dirname, 'dist'),
         filename: 'fp.min.js',
         publicPath: '/',
         libraryTarget: "umd"

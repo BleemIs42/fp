@@ -2,12 +2,12 @@
   "name": "fp",
   "version": "0.0.1",
   "description": "FP is a Functionl Program library for Javascript.",
-  "main": "index.js",
+  "main": "dist/fp.min.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "build": "rm -rf dist && node index.js",
+    "build": "rm -rf dist && node build/index.js",
     "demo": "node demo/index.js"
   },
   "repository": {

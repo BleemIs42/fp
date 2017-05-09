@@ -1,12 +1,12 @@
 let FP = {}
-FP.curry = fn => {
-    const f = _args => (...args) => {
-        args = [...args, ..._args]
-        if (args.length >= fn.length) return fn(...args)
-        return f(args)
-    }
-    return f([])
-}
+
+
+const curry = (fn, arr = []) => (...args) => (_args => _args.length === fn.length ? f(..._args) : curry(fn, _args))([...arr, ...args])
+FP.curry = curry
+// FP.curry = fn => {
+//     const f = _args => (...args) => ([...args, ..._args].length === fn.length ? fn(...args) : f(args))
+//     return f([])
+// }
 
 FP.compose = (...fns) => fns.reverse().reduce((fn1, fn2) => (...args) => fn2(fn1(...args)))
 // FP.compose = (...fns) => (...args) => fns.reverse().reduce((args, fn) => [fn(...args)], args)[0]

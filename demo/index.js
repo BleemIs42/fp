@@ -1,6 +1,6 @@
 require("babel-register")
-// var FP = require("../src/lib").default
-var FP = require("../dist/fp.min.js").default
+var FP = require("../src/lib").default
+// var FP = require("../dist/fp.min.js").default
 // var FP = require('./../src')
 
 const add = (a, b) => a + b
