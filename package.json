@@ -1,5 +1,5 @@
 {
-  "name": "fp",
+  "name": "fp.js",
   "version": "0.0.1",
   "description": "FP is a Functionl Program library for Javascript.",
   "main": "dist/fp.min.js",
@@ -23,7 +23,7 @@
     "babel-register": "^6.18.0",
     "webpack": "^2.5.0"
   },
-  "author": "",
+  "author": "shafley",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Shafley/fp/issues"
