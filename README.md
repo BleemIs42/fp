@@ -3,10 +3,12 @@ FP is a Functionl Program library for Javascript.
 
 # API    
     * curry
-        FP.curry(f(a, b))  =>  f(a)(b) / f(a, b)
+        curry(f(a, b))  =>  f(a)(b) / f(a, b)
+    * uncurry
+        uncurry(curry(f(a, b)))  =>  f(a, b)
     * compose 
-        FP.compose(f, g)(x)  => f(g(x))
+        compose(f, g)(x)  => f(g(x))
     * composeL
-        FP.composeL(f, g)(x)  =>  g(f(x))
+        composeL(f, g)(x)  =>  g(f(x))
     * pipe
-        FP.pipe(x)(f, g)  =>  g(f(x))
+        pipe(x)(f, g)  =>  g(f(x))

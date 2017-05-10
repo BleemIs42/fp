@@ -7,6 +7,8 @@ FP.curry = curry
 //     return f([])
 // }
 
+FP.uncurry = (cfn, ...args0) => (...args) => [...args0, ...args].reduce((fn, arg) => fn(arg), cfn)
+
 FP.compose = (...fns) => fns.reverse().reduce((fn1, fn2) => (...args) => fn2(fn1(...args)))
 // FP.compose = (...fns) => (...args) => fns.reverse().reduce((args, fn) => [fn(...args)], args)[0]
 // FP.compose = (...fns) => (...args) => {

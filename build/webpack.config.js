@@ -11,9 +11,10 @@ export default {
     },
     entry: resolve(__dirname, '../src/lib'),
     output: {
-        path: resolve(__dirname, 'dist'),
+        path: resolve(__dirname, '../dist'),
         filename: 'fp.min.js',
         publicPath: '/',
+        library: 'FP',
         libraryTarget: "umd"
     },
     module: {
