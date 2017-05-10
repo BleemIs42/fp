@@ -1,7 +1,6 @@
 let FP = {}
 
-
-const curry = (fn, arr = []) => (...args) => (_args => _args.length === fn.length ? f(..._args) : curry(fn, _args))([...arr, ...args])
+const curry = (fn, ...args0) => (...args) => (_args => _args.length === fn.length ? fn(..._args) : curry(fn, ..._args))([...args0, ...args])
 FP.curry = curry
 // FP.curry = fn => {
 //     const f = _args => (...args) => ([...args, ..._args].length === fn.length ? fn(...args) : f(args))
