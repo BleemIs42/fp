@@ -1,10 +1,10 @@
 let FP = {}
 
-const curry = (fn, ...args0) => (...args) => (_args => _args.length === fn.length ? fn(..._args) : curry(fn, ..._args))([...args0, ...args])
+const curry = (fn, arity = fn.length, ...args0) => (...args) => (_args => _args.length >= arity ? fn(..._args) : curry(fn, arity, ..._args))([...args0, ...args])
 FP.curry = curry
-// FP.curry = fn => {
-//     const f = _args => (...args) => ([...args, ..._args].length === fn.length ? fn(...args) : f(args))
-//     return f([])
+// FP.curry = (fn, arity = fn.length, ...args0) => {
+//     const f = _args => (...args) => ([...args, ..._args].length >= arity ? fn(...args, ..._args) : f([...args, ..._args]))
+//     return f([...args0])
 // }
 
 FP.uncurry = (cfn, ...args0) => (...args) => [...args0, ...args].reduce((fn, arg) => fn(arg), cfn)

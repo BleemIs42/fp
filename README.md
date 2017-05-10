@@ -4,8 +4,11 @@ FP is a Functionl Program library for Javascript.
 # API    
     * curry
         curry(f(a, b))  =>  f(a)(b) / f(a, b)
+        // need arity
+        curry(f(...args, arity)) 
     * uncurry
         uncurry(curry(f(a, b)))  =>  f(a, b)
+        uncurry(curry(f(...args, arity))) == curry(f(...args, arity))
     * compose 
         compose(f, g)(x)  => f(g(x))
     * composeL
